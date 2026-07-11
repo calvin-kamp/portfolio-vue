@@ -10,15 +10,14 @@ interface Props {
 const props = defineProps<Props>()
 
 const isInternal = computed((): boolean => props.name !== undefined || props.href.startsWith('#'))
-const classes = 'flex'
 </script>
 
 <template>
-  <RouterLink v-if="isInternal" :to="name ?? href" :class="classes">
+  <RouterLink v-if="isInternal" :to="name ?? href">
     <slot />
   </RouterLink>
 
-  <a v-else :href="href" target="_blank" rel="noopener noreferrer" :class="classes">
+  <a v-else :href="href" target="_blank" rel="noopener noreferrer">
     <slot />
   </a>
 </template>
