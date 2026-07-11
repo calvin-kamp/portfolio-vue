@@ -1,1 +1,133 @@
 @import 'tailwindcss';
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold;
+  }
+}
+
+/* ─────────── PALETTE (static ramps) ─────────── */
+@theme {
+  --color-violet-50: #f5f3ff;
+  --color-violet-100: #ede9fe;
+  --color-violet-200: #ddd6fe;
+  --color-violet-300: #c4b5fd;
+  --color-violet-400: #a78bfa;
+  --color-violet-500: #8b5cf6;
+  --color-violet-600: #7c3aed;
+  --color-violet-700: #6d28d9;
+  --color-violet-800: #5b21b6;
+  --color-violet-900: #4c1d95;
+  --color-violet-950: #2e1065;
+
+  --color-lime-50: #f7fee7;
+  --color-lime-100: #ecfccb;
+  --color-lime-200: #d9f99d;
+  --color-lime-300: #bef264;
+  --color-lime-400: #a3e635;
+  --color-lime-500: #84cc16;
+  --color-lime-600: #65a30d;
+  --color-lime-700: #4d7c0f;
+  --color-lime-800: #3f6212;
+  --color-lime-900: #365314;
+  --color-lime-950: #1a2e05;
+
+  /* neutrals — light */
+  --color-stone-50: #fafaf9;
+  --color-stone-100: #f5f5f4;
+  --color-stone-200: #e7e5e4;
+  --color-stone-300: #d6d3d1;
+  --color-stone-400: #a8a29e;
+  --color-stone-500: #78716c;
+  --color-stone-600: #57534e;
+  --color-stone-700: #44403c;
+  --color-stone-800: #292524;
+  --color-stone-900: #1c1917;
+  --color-stone-950: #0c0a09;
+
+  /* neutrals — dark surfaces */
+  --color-ink-950: #0a0a0a;
+  --color-ink-900: #1a1a1a;
+  --color-ink-800: #262626;
+  --color-ink-600: #4d4d4d;
+
+  /* status raw */
+  --color-emerald-400: #34d399;
+  --color-emerald-500: #10b981;
+  --color-emerald-700: #047857;
+  --color-green-400: #4ade80;
+  --color-green-700: #15803d;
+  --color-sky-400: #38bdf8;
+  --color-sky-700: #0369a1;
+  --color-amber-400: #fbbf24;
+  --color-amber-700: #b45309;
+  --color-red-400: #f87171;
+  --color-red-700: #b91c1c;
+}
+
+/* ─────────── SEMANTIC (themeable) ─────────── */
+/* `inline` = the utility references the var directly, so overriding it
+   under [data-theme] re-themes without regenerating classes. */
+@theme inline {
+  --color-bg: var(--body-background);
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-border: var(--border);
+  --color-border-hover: var(--border-hover);
+  --color-content: var(--text);
+  --color-content-muted: var(--text-muted);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-active: var(--primary-active);
+  --color-primary-fg: var(--text-on-primary);
+  --color-ring: var(--focus-ring);
+  --color-ui-success: var(--ui-success);
+  --color-ui-info: var(--ui-info);
+  --color-ui-warning: var(--ui-warning);
+  --color-ui-error: var(--ui-error);
+}
+
+/* ─────────── THEME VALUES ─────────── */
+:root,
+[data-theme='dark'] {
+  --body-background: #0a0a0a;
+  --surface: #1a1a1a;
+  --surface-raised: #262626;
+  --border: #262626;
+  --border-hover: #4d4d4d;
+  --text: #e7e5e4;
+  --text-muted: rgba(231, 229, 228, 0.65);
+  --primary: #c4b5fd;
+  --primary-hover: #a78bfa;
+  --primary-active: #8b5cf6;
+  --text-on-primary: #0a0a0a;
+  --focus-ring: #a78bfa;
+  --ui-success: #4ade80;
+  --ui-info: #38bdf8;
+  --ui-warning: #fbbf24;
+  --ui-error: #f87171;
+}
+
+[data-theme='light'] {
+  --body-background: #fafaf9;
+  --surface: #ffffff;
+  --surface-raised: #f5f5f4;
+  --border: #e7e5e4;
+  --border-hover: #a8a29e;
+  --text: #1c1917;
+  --text-muted: rgba(28, 25, 23, 0.65);
+  --primary: #6d28d9;
+  --primary-hover: #5b21b6;
+  --primary-active: #4c1d95;
+  --text-on-primary: #ffffff;
+  --focus-ring: #7c3aed;
+  --ui-success: #15803d;
+  --ui-info: #0369a1;
+  --ui-warning: #b45309;
+  --ui-error: #b91c1c;
+}
