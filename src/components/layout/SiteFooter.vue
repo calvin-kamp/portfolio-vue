@@ -1,10 +1,6 @@
 <script setup lang="ts">
+import type { NavItem } from '.'
 import { BaseLink } from '../base'
-
-interface NavItem {
-  href: string
-  label: string
-}
 
 const footerNavigation: NavItem[] = [
   { href: 'https://github.com/calvin-kamp', label: 'GitHub' },
